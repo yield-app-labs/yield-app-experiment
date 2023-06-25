@@ -1,113 +1,258 @@
-import Image from 'next/image'
+import CustomerFeedbacks from "@/components/customer-feedbacks";
+import BusinessMetrics from "@/components/business-metrics";
+import CustomerBenefits from "@/components/customer-benefits";
+import CustomerExtraBenefits from "@/components/customer-extra-benefits";
+import MainBanner, { MainBannerProps } from "@/components/main-banner";
 
-export default function Home() {
+import homePageBanner from "@/images/home-page-banner.png";
+
+const mainBanner = {
+  title: {
+    pre: "Your digital",
+    mid: "wealth partner",
+    post: "",
+  },
+  description: `Yield App is a digital wealth platform that allows you to safely
+  earn passive yield on your digital assets at the click of a
+  button.`,
+  links: [
+    {
+      id: 1,
+      url: "/",
+      text: "Get started",
+      variant: "primary",
+    },
+    {
+      id: 2,
+      url: "/",
+      text: "Learn more",
+      variant: "secondary",
+    },
+  ],
+  image: {
+    src: homePageBanner,
+    alt: "Home Page Banner",
+  },
+} as MainBannerProps;
+
+const businessMetrics = [
+  {
+    id: 1,
+    value: "90,000+",
+    description: "Customers",
+  },
+  {
+    id: 2,
+    value: "140+",
+    description: "Available jurisdictions",
+  },
+  {
+    id: 3,
+    value: "$2B+",
+    description: "Processed in 2+ years",
+  },
+];
+
+const customerFeedbacks = [
+  {
+    id: 1,
+    icon: {
+      alt: "reddit-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/reddit_icon_671cc18147.svg",
+    },
+    text: "I'm very confident in the Yield App. They have a lot of material on their strategies, and they answer all questions asked on their Discord and Telegram channels. Only enter channels via the website. no concern at all at YIELD APP , even in this bear market , they are a solid project and they are here to stay",
+    author: "HenryGlasou",
+  },
+  {
+    id: 2,
+    icon: {
+      alt: "twitter-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/twitter_icon_9f92be7dce.svg",
+    },
+    text: "I was digging DEEP on every crypto reddit thread I could find. And eventually stumbled upon a single reddit user who mentioned Yield, Jumped into a weeks worth of DD on Yield and the rest is history.",
+    author: "PlaywinGirl1",
+  },
+  {
+    id: 3,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "A great Platform in ''hard times''! Yield have always delivered on their promises, I look forward to them going from strength to strength over the coming years.",
+    author: "Matt",
+  },
+  {
+    id: 4,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "Seamless on and off ramp; great returns but with the security guarantee comparable to a traditional bank.",
+    author: "Anonymous",
+  },
+  {
+    id: 5,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "I've been using Yield App since Feb 2021 and I am a very happy customer. From my point of view it's the safest place to earn yield on your digital assets. I am using it for my BTC and stablecoins. Very professional team and a lot of innovation coming in the near future.",
+    author: "Gradlon Jegouic",
+  },
+  {
+    id: 6,
+    icon: {
+      alt: "reddit-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/reddit_icon_671cc18147.svg",
+    },
+    text: "I'm very confident in the Yield App. They have a lot of material on their strategies, and they answer all questions asked on their Discord and Telegram channels. Only enter channels via the website. no concern at all at YIELD APP , even in this bear market , they are a solid project and they are here to stay",
+    author: "HenryGlasou",
+  },
+  {
+    id: 7,
+    icon: {
+      alt: "twitter-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/twitter_icon_9f92be7dce.svg",
+    },
+    text: "I was digging DEEP on every crypto reddit thread I could find. And eventually stumbled upon a single reddit user who mentioned Yield, Jumped into a weeks worth of DD on Yield and the rest is history.",
+    author: "PlaywinGirl1",
+  },
+  {
+    id: 8,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "A great Platform in ''hard times''! Yield have always delivered on their promises, I look forward to them going from strength to strength over the coming years.",
+    author: "Matt",
+  },
+  {
+    id: 9,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "Seamless on and off ramp; great returns but with the security guarantee comparable to a traditional bank.",
+    author: "Anonymous",
+  },
+  {
+    id: 10,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "I've been using Yield App since Feb 2021 and I am a very happy customer. From my point of view it's the safest place to earn yield on your digital assets. I am using it for my BTC and stablecoins. Very professional team and a lot of innovation coming in the near future.",
+    author: "Gradlon Jegouic",
+  },
+  {
+    id: 11,
+    icon: {
+      alt: "reddit-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/reddit_icon_671cc18147.svg",
+    },
+    text: "I'm very confident in the Yield App. They have a lot of material on their strategies, and they answer all questions asked on their Discord and Telegram channels. Only enter channels via the website. no concern at all at YIELD APP , even in this bear market , they are a solid project and they are here to stay",
+    author: "HenryGlasou",
+  },
+  {
+    id: 12,
+    icon: {
+      alt: "twitter-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/twitter_icon_9f92be7dce.svg",
+    },
+    text: "I was digging DEEP on every crypto reddit thread I could find. And eventually stumbled upon a single reddit user who mentioned Yield, Jumped into a weeks worth of DD on Yield and the rest is history.",
+    author: "PlaywinGirl1",
+  },
+  {
+    id: 13,
+    icon: {
+      alt: "tp-icon.svg",
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tp_icon_b467f7e613.svg",
+    },
+    text: "A great Platform in ''hard times''! Yield have always delivered on their promises, I look forward to them going from strength to strength over the coming years.",
+    author: "Matt",
+  },
+];
+
+const customerBenefits = [
+  {
+    id: 1,
+    title: "No leverage",
+    icon: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/no_leverage_1_123f051b80.svg",
+      alt: "no leverage 1.svg",
+    },
+    description:
+      "We minimize potential risks in our yield-generating strategies by prioritizing capital preservation. We never use leverage.",
+  },
+  {
+    id: 2,
+    title: "No lending",
+    icon: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/nolending_icon_64b146bd1d.svg",
+      alt: "nolending-icon.svg",
+    },
+    description:
+      "Our approach generates alpha through market-neutral strategies and liquidity provision. We fully exclude yield generation through collateralized lending.",
+  },
+  {
+    id: 3,
+    title: "Risk-averse approach",
+    icon: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/riskaverse_icon_fd331e2f3a.svg",
+      alt: "riskaverse-icon.svg",
+    },
+    description:
+      "All the strategies into which we deploy capital are run through enhanced due diligence processes or selected using our 135-point proprietary risk model.",
+  },
+];
+
+const customerExtraBenefits = [
+  {
+    id: 1,
+    title: "Protect your assets from volatility",
+    description:
+      "We focus on capital preservation via a diversified portfolio of DeFi and traditional investment strategies encompassing liquidity provision, market making, and systematic market-neutral strategies. All investments undergo rigorous due diligence before we deploy assets.",
+    img: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/Protect_home_page_04abec1584.svg",
+      alt: "Protect home page.svg",
+    },
+  },
+  {
+    id: 2,
+    title: "Earn on your terms",
+    description:
+      "We empower you to choose the perfect way to earn on your digital assets. Level up your strategy to earn stable, daily interest on the world's leading crypto assets, paid directly into your account.",
+    img: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/Q1_2023_updated_web_illus_3_flexible_and_earnplus_9b9770727a.svg",
+      alt: "Q1 2023 updated web illus 3 flexible and earnplus.svg",
+    },
+    link: {
+      url: "/",
+      text: "Get started",
+    },
+  },
+  {
+    id: 3,
+    title: "Yield Pro",
+    description:
+      "By utilizing crypto structured products, we harness the potential of investment products linked to underlying crypto assets. These products utilize one or more derivative instruments and are designed to provide attractive payoffs to investors, distinct from the return profile of the underlying crypto asset itself. Our approach leverages the benefits of these structured products to generate alpha, enabling us to tap into unique opportunities within the crypto market.",
+    img: {
+      url: "https://yield2-website.s3.eu-central-1.amazonaws.com/Artboard_1_b4b9d4f2a5.svg",
+      alt: "Artboard 1.svg",
+    },
+  },
+];
+
+function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main>
+      <MainBanner {...mainBanner} />
+      <BusinessMetrics businessMetrics={businessMetrics} />
+      <CustomerBenefits benefits={customerBenefits} />
+      <CustomerExtraBenefits extraBenefits={customerExtraBenefits} />
+      <CustomerFeedbacks feedbacks={customerFeedbacks} />
     </main>
-  )
+  );
 }
+
+export default Home;
