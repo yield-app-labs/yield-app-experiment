@@ -6,6 +6,14 @@ import Faqs from "@/components/faqs";
 import MainBanner, { MainBannerProps } from "@/components/main-banner";
 import earnPageBanner from "@/images/earn-page-banner.png";
 
+import dynamic from "next/dynamic";
+const CalculateRewards = dynamic(
+  () => import("@/components/calculate-rewards"),
+  {
+    ssr: false,
+  }
+);
+
 const mainBanner = {
   title: {
     pre: "Earn",
@@ -156,7 +164,7 @@ const earningsData: EarningData[] = [
     ],
   },
   {
-    id: 1,
+    id: 2,
     title: "Earn+",
     description: "Lock YLD for 12 month and receive 12% p.a.",
     lockDuration: "30 days",
@@ -213,7 +221,7 @@ const earningsData: EarningData[] = [
     ],
   },
   {
-    id: 1,
+    id: 3,
     title: "Flexible",
     lockDuration: "Flexible Redemption",
     lockDurationDescription: "Min. lock duration",
@@ -350,6 +358,7 @@ function Earn() {
         data={loyaltyTiers}
       />
       <Faqs faqs={faqs} />
+      <CalculateRewards />
     </main>
   );
 }
