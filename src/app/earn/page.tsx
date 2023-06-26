@@ -72,6 +72,29 @@ const customerExtraBenefits = [
   },
 ];
 
+const faqs = [
+  {
+    id: 1,
+    title: "What is the difference between Flexible, Earn+ and Earn+ 365?",
+    description: `Flexible allows for redemption of ETH and stablecoins at any time, while Earn+ has a 30-day redemption period and higher rates. Earn+ 365 offer a one-year lock-up exclusive to Diamond Tiers for the highest rates.`,
+  },
+  {
+    id: 2,
+    title: "What crypto assets can I earn rewards on?",
+    description: `USDT, USDC, DAI, ETH (Ethereum), BTC (Bitcoin) and YLD`,
+  },
+  {
+    id: 3,
+    title: "When will I start earning rewards, and how do I redeem them?",
+    description: `We calculate and distribute rewards every 24 hours at approximately 00:00 UTC, as you'll see in the earnings ledger on the Transactions page.`,
+  },
+  {
+    id: 4,
+    title: "Are my daily rewards compounded automatically?",
+    description: `Yes, all rewards automatically compound back into the same portfolio. You can redeem these any time from Flexible products, but Earn+ and Earn+ 365 products come with lockup periods. Any rewards earned on YLD are automatically staked.`,
+  },
+];
+
 function Earn() {
   return (
     <main>
@@ -81,7 +104,7 @@ function Earn() {
         benefits={customerBenefits}
       />
       <CustomerExtraBenefits extraBenefits={customerExtraBenefits} />
-      <Faqs />
+      <Faqs faqs={faqs} />
     </main>
   );
 }
