@@ -322,7 +322,7 @@ const loyaltyTiers = [
     tier: "Diamond",
     yldStaked: "20,000 YLD +",
     freeWithdrawals: "3 crypto & 1 EUR, GBP per month",
-    vipChat: false,
+    vipChat: true,
     rates: "up to 11% p.a.",
     yldLock: "12% p.a.",
   },
