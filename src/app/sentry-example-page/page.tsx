@@ -29,13 +29,6 @@ export default function Home() {
       <p>Get started by sending us a sample error:</p>
       <ThrowSentryError />
 
-      <p>
-        Next, look for the error on the{" "}
-        <a href="https://personal-ayp.sentry.io/issues/?project=4505426582568960">
-          Issues Page
-        </a>
-        .
-      </p>
       <p style={{ marginTop: "24px" }}>
         For more information, see{" "}
         <a href="https://docs.sentry.io/platforms/javascript/guides/nextjs/">
