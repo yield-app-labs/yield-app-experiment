@@ -84,7 +84,7 @@ export default function Footer() {
                   <Link href="/security">Asset security</Link>
                 </li>
                 <li className="font-light text-sm my-3">
-                  <a href="/">Blog</a>
+                  <Link href="/blog">Blog</Link>
                 </li>
               </ul>
             </div>

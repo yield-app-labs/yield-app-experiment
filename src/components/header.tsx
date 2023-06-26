@@ -107,9 +107,9 @@ export default function Header() {
                 </div>
               </li>
               <li className="mr-8">
-                <a className="font-bold text-sm" href="/">
+                <Link className="font-bold text-sm" href="/blog">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className="mr-8">
                 <a className="font-bold text-sm" href="/">
