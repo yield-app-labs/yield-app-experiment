@@ -2,6 +2,7 @@ import Footer from "@/components/footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/header";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        type="text/partytown"
+      />
+      <Script id="google-analytics" type="text/partytown">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        `}
+      </Script>
+
       <body className={inter.className}>
         <Header />
         {children}
