@@ -1,6 +1,6 @@
 import CustomerBenefits from "@/components/customer-benefits";
 import CustomerExtraBenefits from "@/components/customer-extra-benefits";
-// import DataTable from "@/components/data-table";
+import DataTable from "@/components/data-table";
 import EarningTabs, { EarningData } from "@/components/earning-tabs";
 import Faqs from "@/components/faqs";
 import MainBanner, { MainBannerProps } from "@/components/main-banner";
@@ -262,6 +262,72 @@ const earningsData: EarningData[] = [
   },
 ];
 
+const tableHeaders = [
+  {
+    key: "membershipTier",
+    value: "Membership tier",
+  },
+  {
+    key: "yldStaked",
+    value: "YLD staked",
+  },
+  {
+    key: "freeWithdrawals",
+    value: "Free withdrawals",
+  },
+  {
+    key: "vipChat",
+    value: "VIP chat",
+  },
+  {
+    key: "rates",
+    value: "Rates",
+  },
+  {
+    key: "yldLock",
+    value: "YLD lock*",
+  },
+];
+
+const loyaltyTiers = [
+  {
+    id: 1,
+    tier: "Bronze",
+    yldStaked: "0-999 YLD",
+    freeWithdrawals: false,
+    vipChat: false,
+    rates: "up to 7% p.a.",
+    yldLock: "0% p.a.",
+  },
+  {
+    id: 2,
+    tier: "Silver",
+    yldStaked: "1,000-9,999 YLD",
+    freeWithdrawals: false,
+    vipChat: false,
+    rates: "up to 8% p.a.",
+    yldLock: "12% p.a.",
+  },
+  {
+    id: 3,
+    tier: "Gold",
+    yldStaked: "10,000-19,999 YLD",
+    freeWithdrawals: false,
+    vipChat: false,
+    rates: "up to 9% p.a.",
+    yldLock: "12% p.a.",
+  },
+  {
+    id: 4,
+    tier: "Diamond",
+    yldStaked: "20,000 YLD +",
+    freeWithdrawals: "3 crypto & 1 EUR, GBP per month",
+    vipChat: false,
+    rates: "up to 11% p.a.",
+    yldLock: "12% p.a.",
+  },
+];
+
 function Earn() {
   return (
     <main>
@@ -276,7 +342,13 @@ function Earn() {
         earnings={earningsData}
       />
       <CustomerExtraBenefits extraBenefits={customerExtraBenefits} />
-      {/* <DataTable /> */}
+      <DataTable
+        title="Loyalty tiers"
+        subtitle="Our membership tiers are powered by our native token YLD. Stake YLD to
+          earn the highest rates."
+        headers={tableHeaders}
+        data={loyaltyTiers}
+      />
       <Faqs faqs={faqs} />
     </main>
   );
