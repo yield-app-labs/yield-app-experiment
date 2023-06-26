@@ -11,7 +11,8 @@ function getBusinessMetrics(count: number) {
   }));
 }
 
-const businessMetrics = getBusinessMetrics(2);
+const BUSINESS_METRICS_COUNT = 2;
+const businessMetrics = getBusinessMetrics(BUSINESS_METRICS_COUNT);
 
 describe("<BusinessMetrics />", () => {
   it("renders", () => {
