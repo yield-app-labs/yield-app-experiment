@@ -21,7 +21,9 @@ export default function BusinessMetrics({
               key={id}
             >
               <h2 className="font-bold text-4xl mb-2">{value}</h2>
-              <p className="font-light">{description}</p>
+              <p role="paragraph" className="font-light">
+                {description}
+              </p>
             </article>
           ))}
         </section>
