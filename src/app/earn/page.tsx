@@ -1,5 +1,7 @@
 import CustomerBenefits from "@/components/customer-benefits";
 import CustomerExtraBenefits from "@/components/customer-extra-benefits";
+// import DataTable from "@/components/data-table";
+import EarningTabs, { EarningData } from "@/components/earning-tabs";
 import Faqs from "@/components/faqs";
 import MainBanner, { MainBannerProps } from "@/components/main-banner";
 import earnPageBanner from "@/images/earn-page-banner.png";
@@ -95,6 +97,171 @@ const faqs = [
   },
 ];
 
+const earningsData: EarningData[] = [
+  {
+    id: 1,
+    title: "Earn+ 365",
+    description: "Lock YLD for 12 month and receive 12% p.a.",
+    lockDuration: "365 days",
+    lockDurationDescription: "Min. lock duration",
+    cryptoEarnings: [
+      {
+        id: 1,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/btc_2d67c0aae2.svg",
+          alt: "btc-icon.svg",
+        },
+        description: "up to 7% p.a.",
+      },
+      {
+        id: 2,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/eth_d181ce880c.svg",
+          alt: "eth-icon.svg",
+        },
+        description: "up to 7.5% p.a.",
+      },
+      {
+        id: 3,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdc_059b089bbe.svg",
+          alt: "usdc-icon.svg",
+        },
+        description: "up to 11% p.a.",
+      },
+      {
+        id: 4,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdt_ab57ebe9c2.svg",
+          alt: "usdt-icon.svg",
+        },
+        description: "up to 11% p.a.",
+      },
+      {
+        id: 5,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/dai_e5e47ca70a.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 11% p.a.",
+      },
+      {
+        id: 6,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tusd_fda5faf78c.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 11% p.a.",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Earn+",
+    description: "Lock YLD for 12 month and receive 12% p.a.",
+    lockDuration: "30 days",
+    lockDurationDescription: "Min. lock duration",
+    cryptoEarnings: [
+      {
+        id: 1,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/btc_2d67c0aae2.svg",
+          alt: "btc-icon.svg",
+        },
+        description: "up to 5% p.a.",
+      },
+      {
+        id: 2,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/eth_d181ce880c.svg",
+          alt: "eth-icon.svg",
+        },
+        description: "up to 5.5% p.a.",
+      },
+      {
+        id: 3,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tusd_fda5faf78c.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 9% p.a.",
+      },
+      {
+        id: 4,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdc_059b089bbe.svg",
+          alt: "usdc-icon.svg",
+        },
+        description: "up to 9% p.a.",
+      },
+      {
+        id: 5,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdt_ab57ebe9c2.svg",
+          alt: "usdt-icon.svg",
+        },
+        description: "up to 9% p.a.",
+      },
+      {
+        id: 6,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/dai_e5e47ca70a.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 9% p.a.",
+      },
+    ],
+  },
+  {
+    id: 1,
+    title: "Flexible",
+    lockDuration: "Flexible Redemption",
+    lockDurationDescription: "Min. lock duration",
+    cryptoEarnings: [
+      {
+        id: 1,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/eth_d181ce880c.svg",
+          alt: "eth-icon.svg",
+        },
+        description: "up to 3.5% p.a.",
+      },
+      {
+        id: 2,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/tusd_fda5faf78c.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 7% p.a.",
+      },
+      {
+        id: 3,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdc_059b089bbe.svg",
+          alt: "usdc-icon.svg",
+        },
+        description: "up to 7% p.a.",
+      },
+      {
+        id: 4,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/usdt_ab57ebe9c2.svg",
+          alt: "usdt-icon.svg",
+        },
+        description: "up to 7% p.a.",
+      },
+      {
+        id: 5,
+        icon: {
+          url: "https://yield2-website.s3.eu-central-1.amazonaws.com/dai_e5e47ca70a.svg",
+          alt: "dai-icon.svg",
+        },
+        description: "up to 7% p.a.",
+      },
+    ],
+  },
+];
+
 function Earn() {
   return (
     <main>
@@ -103,7 +270,13 @@ function Earn() {
         title="How we achieve our rates"
         benefits={customerBenefits}
       />
+      <EarningTabs
+        title="Ways to start earning"
+        subtitle="Minimum lock-up period applies"
+        earnings={earningsData}
+      />
       <CustomerExtraBenefits extraBenefits={customerExtraBenefits} />
+      {/* <DataTable /> */}
       <Faqs faqs={faqs} />
     </main>
   );

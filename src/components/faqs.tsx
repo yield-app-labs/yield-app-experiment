@@ -15,14 +15,14 @@ interface FaqsProps {
 
 export default function Faqs({ faqs }: FaqsProps) {
   return (
-    <div className="faqs text-white">
+    <div className="faqs text-white mt-16">
       <section className="py-24 px-64 container mx-auto mb-16 bg-primary rounded-lg">
         <h2 className="text-4xl font-bold mb-8">Frequently Asked Questions</h2>
         {faqs.map((faq) => (
           <Disclosure key={faq.id}>
             {({ open }) => (
               <>
-                <Disclosure.Button className="flex text-xl w-full justify-between rounded-lg py-2 text-left font-bold focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
+                <Disclosure.Button className="flex text-xl w-full justify-between rounded-lg py-2 text-left font-bold focus:outline-none focus-visible:ring focus-visible:ring-slate-500 focus-visible:ring-opacity-75">
                   <span>{faq.title}</span>
                   <ChevronUpIcon
                     className={`${
