@@ -4,6 +4,8 @@ import CustomerBenefits from "@/components/customer-benefits";
 import CustomerExtraBenefits from "@/components/customer-extra-benefits";
 import MainBanner, { MainBannerProps } from "@/components/main-banner";
 
+import axios from "axios";
+
 import homePageBanner from "@/images/home-page-banner.png";
 
 const mainBanner = {
@@ -243,7 +245,10 @@ const customerExtraBenefits = [
   },
 ];
 
-function Home() {
+async function Home() {
+  const { data: book } = await axios.get("https://my.backend/book");
+  console.log(book);
+
   return (
     <main>
       <MainBanner {...mainBanner} />

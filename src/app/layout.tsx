@@ -4,6 +4,10 @@ import { Inter } from "next/font/google";
 import Header from "@/components/header";
 import Script from "next/script";
 
+if (process.env.NEXT_PUBLIC_API_MOCKING) {
+  require("../mocks");
+}
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
