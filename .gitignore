@@ -16,7 +16,6 @@
 /build
 public/robots.txt
 public/sitemap*.xml
-public/~partytown
 
 # misc
 .DS_Store

@@ -27,9 +27,9 @@ export default function RootLayout({
     <html lang="en">
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        type="text/partytown"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -38,7 +38,7 @@ export default function RootLayout({
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
-      <Script id="crisp-chat" strategy="afterInteractive">
+      <Script id="crisp-chat" strategy="lazyOnload">
         {`
         window.$crisp=[];window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
         `}

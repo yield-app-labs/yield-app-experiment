@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm partytown && next dev",
-    "build": "pnpm partytown && next build",
+    "dev": "next dev",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "partytown": "partytown copylib public/~partytown",
     "postbuild": "next-sitemap",
     "test": "jest --watch",
     "test:ci": "jest --coverage"
@@ -43,7 +42,6 @@
     "typescript": "5.1.3"
   },
   "devDependencies": {
-    "@builder.io/partytown": "^0.8.0",
     "@faker-js/faker": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
