@@ -56,6 +56,14 @@ export default function RootLayout({
   })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
         `}
       </Script>
+      <Script id="omnisend" strategy="lazyOnload">
+        {`
+window.omnisend = window.omnisend || [];
+omnisend.push(["accountID", "649aea59091c7843509cdf83"]);
+omnisend.push(["track", "$pageViewed"]);
+!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="https://omnisnippet1.com/inshop/launcher-v2.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}();
+        `}
+      </Script>
 
       <body className={inter.className}>
         <Header />
