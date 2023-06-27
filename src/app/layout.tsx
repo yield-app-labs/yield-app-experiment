@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/components/header";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING) {
   require("../mocks");
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
