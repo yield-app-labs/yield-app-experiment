@@ -67,10 +67,12 @@ export default function MainBanner({
           </div>
           <Image
             src={image.src}
-            quality={75}
+            quality={90}
             alt={image.alt}
             priority
             placeholder="blur"
+            width={500}
+            height={500}
           />
         </div>
       </div>

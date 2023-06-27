@@ -54,8 +54,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         className="py-2 mx-auto"
         src={src}
         alt={alt}
-        width={500}
-        height={500}
+        width={732}
+        height={440}
         priority
       />
     ),
