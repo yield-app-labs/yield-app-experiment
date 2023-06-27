@@ -14,6 +14,7 @@ export default function Header() {
               width={112}
               height={26}
               className="mr-8"
+              priority
             />
           </Link>
           <div className="flex items-center">

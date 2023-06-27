@@ -8,6 +8,9 @@ if (process.env.NEXT_PUBLIC_API_MOCKING) {
   require("../mocks");
 }
 
+const CRISP_WEBSITE_ID = process.env.CRISP_WEBSITE_ID;
+const GA_MEASUREMENT_ID = process.env.GA_MEASUREMENT_ID;
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -23,16 +26,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
         type="text/partytown"
       />
-      <Script id="google-analytics" type="text/partytown">
+      <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
+      <Script id="crisp-chat" strategy="afterInteractive">
+        {`
+        window.$crisp=[];window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
         `}
       </Script>
 
