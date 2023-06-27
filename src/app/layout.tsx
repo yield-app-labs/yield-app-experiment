@@ -44,7 +44,7 @@ export default function RootLayout({
         window.$crisp=[];window.CRISP_WEBSITE_ID="${CRISP_WEBSITE_ID}";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
         `}
       </Script>
-      <Script id="crisp-chat" strategy="lazyOnload">
+      <Script id="hotjar" strategy="lazyOnload">
         {`
     (function(h,o,t,j,a,r){
       h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
