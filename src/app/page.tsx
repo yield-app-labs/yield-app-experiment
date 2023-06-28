@@ -246,8 +246,10 @@ const customerExtraBenefits = [
 ];
 
 async function Home() {
-  const { data: book } = await axios.get("https://my.backend/book");
-  console.log(book);
+  if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
+    const { data: book } = await axios.get("https://my.backend/book");
+    console.log(book);
+  }
 
   return (
     <main>

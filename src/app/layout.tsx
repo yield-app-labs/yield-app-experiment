@@ -5,7 +5,7 @@ import Header from "@/components/header";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
 
-if (process.env.NEXT_PUBLIC_API_MOCKING) {
+if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("../mocks");
 }
 
